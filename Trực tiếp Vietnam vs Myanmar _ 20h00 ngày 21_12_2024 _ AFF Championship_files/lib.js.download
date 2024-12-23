@@ -1,0 +1,461 @@
+﻿var Lib = new function () {
+    var searchLeagueId = 0;
+    var CreateCookie = function (name, value, days) {
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+            var expires = "; expires=" + date.toGMTString();
+        }
+        else var expires = "";
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+    var ReadCookie = function (name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for (var i = 0; i < ca.length; i++) {
+            var c = ca[i];
+            while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+        }
+        return '';
+    }
+    var DeleteCookie = function (name) {
+        document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
+    }
+    var GetUrlVars = function () {
+        var vars = [], hash;
+        var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+        for (var i = 0; i < hashes.length; i++) {
+            hash = hashes[i].split('=');
+            vars.push(hash[0]);
+            vars[hash[0]] = hash[1];
+        }
+        return vars;
+    }
+    var DisplayWaring = function (sText) {
+        swal("Cảnh báo", sText, "waring");
+    }
+    var DisplayError = function (sText) {
+        swal("Lỗi", sText, "error");
+    }
+    var DisplaySuccess = function (sText) {
+        swal("Thành công", sText, "success");
+    }
+    var DisplayPopupDeveloping = function () {
+        $('#md_developing').modal('show');
+    }
+    var TypingNumber = function (controlId) {
+        $('#' + controlId).keyup(function (event) {
+            // skip for arrow keys
+            if (event.which >= 37 && event.which <= 40) return;
+            // format number
+            $(this).val(function (index, num) {
+                num = num.toString().replace(/\$|\,/g, '');
+                if (isNaN(num))
+                    num = "0";
+                sign = (num == (num = Math.abs(num)));
+                num = Math.floor(num * 100 + 0.50000000001);
+                cents = num % 100;
+                num = Math.floor(num / 100).toString();
+                if (cents < 10)
+                    cents = "0" + cents;
+                for (var i = 0; i < Math.floor((num.length - (1 + i)) / 3); i++)
+                    num = num.substring(0, num.length - (4 * i + 3)) + ',' +
+                        num.substring(num.length - (4 * i + 3));
+                return (((sign) ? '' : '-') + num);
+            });
+        });
+    }
+    var OnSpinnersButton = function (btn, elementLoading) {
+        $(btn).attr('disabled', 'disabled');
+        $(btn).attr('style', 'cursor: not-allowed;');
+        $(elementLoading).addClass("fa fa-spinner fa-spin");
+    }
+    var OffSpinnersButton = function (btn, elementLoading) {
+        $(btn).removeAttr('disabled', 'disabled');
+        $(btn).removeAttr('style', 'cursor: not-allowed;');
+        $(elementLoading).removeClass('fa fa-spinner fa-spin');
+    }
+    var ValidatePhone = function (phone) {
+        const re = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+        return re.test(String(phone).toLowerCase());
+    }
+    var ValidateEmail = function (email) {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+    var ShowWaringDeveloping = function () {
+        swal("", "Đang phát triển tính năng", "warning");
+    }
+    var ChooseLeague = function (leagueId) {
+        window.location.href = "/schedule.html?leaguesId=" + leagueId;
+    }
+    var GetDateTimeToString = function () {
+        let today = new Date();
+        let dd = today.getDate();
+        let mm = today.getMonth() + 1;
+        let yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        return dd + '/' + mm + '/' + yyyy;
+    }
+    var ConvertStringToDate = function (dateString) {
+        let parts = dateString.split('/');
+        let day = parseInt(parts[0]);
+        let month = parseInt(parts[1]) - 1; // Trừ 1 vì tháng trong JavaScript bắt đầu từ 0
+        let year = parseInt(parts[2]);
+        let date = new Date(year, month, day);
+        return date;
+    }
+    var ShowModalSearch = function () {
+        $('#md_search_Body').html('');
+        $.ajax({
+            type: "GET",
+            url: '/HomeV2/ShowModalSearch',
+            data: { leagueId: searchLeagueId },
+            beforeSend: function () {
+                $.blockUI({
+                    message: '<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
+                });
+            },
+            success: function (res) {
+                $.unblockUI();
+                $('#md_search_Body').html(res);
+                $('#md_search').modal('show');
+            }
+        });
+    }
+    var CheckCookiesOdds = function () {
+        if (Lib.ReadCookie('say2tv_switch_odds') == '1') {
+            $('#switch').click();
+            $('#switchText').html('ON');
+            $('#lblSwitch').attr('style', 'background: var(--background-green, #81F19D1A);border: 0.5px solid #34C759;border-bottom: none;');
+            $('#switchText').attr('style', 'color: white;');
+            $('#slider-round').attr('style', 'background-color: #34C759;');
+            $('.odds-center-match-schedule').removeAttr('style', 'visibility: hidden;');
+            $('.odds-center-match-schedule').attr('style', 'visibility: visible;');
+        }
+    }
+    var ShowModalLogin = function () {
+        $('#md_bottom').modal('hide');
+        $('#md_bottom_Body').html('');
+        $.ajax({
+            type: "GET",
+            url: '/User/ShowModalLogin',
+            beforeSend: function () {
+                $.blockUI({
+                    message: '<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
+                });
+            },
+            success: function (res) {
+                setTimeout(() => {
+                    $.unblockUI();
+                    $('#md_bottom_Body').html(res);
+                    $('#md_bottom').attr('style', '-webkit-animation: slideInUp 0.5s ease-in-out;animation: slideInUp 0.5s ease-in-out;');
+                    $('#md_bottom').modal('show');
+                }, 500);
+            }
+        });
+    }
+    var HandleLoginModal = function (tthis, elementLoading) {
+        Lib.OnSpinnersButton(tthis, elementLoading);
+        var username = $('#txtUsername').val();
+        var password = $('#txtPassword').val();
+        if (username == '' || username == null || username == undefined) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Vui lòng nhập tài khoản');
+            return false;
+        }
+        else if (password == '' || password == null || password == undefined) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Vui lòng nhập mật khẩu');
+            return false;
+        }
+        else {
+            $.ajax({
+                type: "POST",
+                url: '/User/HandleLogin',
+                data: { Username: username, Password: password },
+                success: function (res) {
+                    Lib.OffSpinnersButton(tthis, elementLoading);
+                    if (res.status == 1) {
+                        if ($('#cbRemeber').is(':checked')) {
+                            Lib.CreateCookie("webLiveTV_username", $('#txtUsername').val(), 30);
+                            Lib.CreateCookie("webLiveTV_password", $('#txtPassword').val(), 30);
+                        }
+                        else {
+                            Lib.CreateCookie("webLiveTV_username", $('#txtUsername').val(), -1);
+                            Lib.CreateCookie("webLiveTV_password", $('#txtPassword').val(), -1);
+                        }
+
+                        if (res.url.indexOf("otp") > -1) {
+                            Lib.ShowModalOtp();
+                        }
+                        else {
+                            window.location.reload();
+                        }
+                    }
+                    else {
+                        Lib.DisplayError(res.message);
+                    }
+                }
+            });
+        }
+    }
+    var ShowModalRegister = function () {
+        $('#md_bottom').modal('hide');
+        $('#md_bottom_Body').html('');
+        $.ajax({
+            type: "GET",
+            url: '/User/ShowModalRegister',
+            beforeSend: function () {
+                $.blockUI({
+                    message: '<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
+                });
+            },
+            success: function (res) {
+                setTimeout(() => {
+                    $.unblockUI();
+                    $('#md_bottom_Body').html(res);
+                    $('#md_bottom').attr('style', '-webkit-animation: slideInUp 0.5s ease-in-out;animation: slideInUp 0.5s ease-in-out;');
+                    $('#md_bottom').modal('show');
+                }, 500);
+            }
+        });
+    }
+    var HandleRegisterModal = function (tthis, elementLoading) {
+        Lib.OnSpinnersButton(tthis, elementLoading);
+        var fullName = $('#txtFullname').val();
+        var email = $('#txtEmail').val();
+        var username = $('#txtUsername').val();
+        var password = $('#txtPassword').val();
+        var repassword = $('#txtRePassword').val();
+        var phone = $('#txtPhone').val();
+        if (fullName == '' || fullName == null || fullName == undefined) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Vui lòng nhập họ và tên');
+            return false;
+        }
+        else if (email == '' || email == null || email == undefined) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Vui lòng nhập email');
+            return false;
+        }
+        else if (!Lib.ValidateEmail(email)) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Email không đúng định dạng. Vui lòng kiểm tra lại');
+            return false;
+        }
+        else if (phone == '' || phone == null || phone == undefined) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Vui lòng nhập số điện thoại');
+            return false;
+        }
+        else if (!Lib.ValidatePhone(phone)) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Số điện thoại không đúng định dạng. Vui lòng kiểm tra lại');
+            return false;
+        }
+        else if (username == '' || username == null || username == undefined) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Vui lòng nhập tài khoản');
+            return false;
+        }
+        else if (password == '' || password == null || password == undefined) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Vui lòng nhập mật khẩu');
+            return false;
+        }
+        else if (repassword == '' || repassword == null || repassword == undefined) {
+            Lib.OffSpinnersButton(tthis, elementLoading);
+            Lib.DisplayError('Vui lòng nhập lại mật khẩu');
+            return false;
+        }
+        else {
+            $.ajax({
+                type: "POST",
+                url: '/User/HandleRegister',
+                data: { FullName: fullName, Email: email, Username: username, Password: password, RePassword: repassword, Phone: phone },
+                success: function (res) {
+                    Lib.OffSpinnersButton(tthis, elementLoading);
+                    if (res.status == 1) {
+                        Lib.ShowModalOtp();
+                    }
+                    else {
+                        Lib.DisplayError(res.message);
+                    }
+                }
+            });
+        }
+    }
+    var ShowModalOtp = function () {
+        $('#md_bottom').modal('hide');
+        $('#md_bottom_Body').html('');
+        $.ajax({
+            type: "GET",
+            url: '/User/ShowModalOtp',
+            beforeSend: function () {
+                $.blockUI({
+                    message: '<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
+                });
+            },
+            success: function (res) {
+                setTimeout(() => {
+                    $.unblockUI();
+                    $('#md_bottom_Body').html(res);
+                    $('#md_bottom').attr('style', '-webkit-animation: slideInUp 0.5s ease-in-out;animation: slideInUp 0.5s ease-in-out;');
+                    $('#md_bottom').modal('show');
+                }, 500);
+            }
+        });
+    }
+    var HandleVerifyOtp = function (tthis, elementLoading) {
+        Lib.OnSpinnersButton(tthis, elementLoading);
+        var otp = $('#txtOtp').val();
+        $.ajax({
+            type: "POST",
+            url: '/User/VerifyOtp',
+            data: { otp: otp },
+            success: function (res) {
+                Lib.OffSpinnersButton(tthis, elementLoading);
+                if (res.status == 1) {
+                    window.location.reload();
+                }
+                else {
+                    Lib.DisplayError(res.message);
+                }
+            }
+        });
+    }
+    var ShowModalFogotPass = function () {
+        $('#md_bottom').modal('hide');
+        $('#md_bottom_Body').html('');
+        $.ajax({
+            type: "GET",
+            url: '/User/ShowModalFogotPass',
+            beforeSend: function () {
+                $.blockUI({
+                    message: '<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
+                });
+            },
+            success: function (res) {
+                setTimeout(() => {
+                    $.unblockUI();
+                    $('#md_bottom_Body').html(res);
+                    $('#md_bottom').attr('style', '-webkit-animation: slideInUp 0.5s ease-in-out;animation: slideInUp 0.5s ease-in-out;');
+                    $('#md_bottom').modal('show');
+                }, 500);
+            }
+        });
+    }
+    var HandleFogotPass = function (tthis, elementLoading) {
+        Lib.OnSpinnersButton(tthis, elementLoading);
+        var email = $('#txtEmail').val();
+        $.ajax({
+            type: "POST",
+            url: '/User/HandleForgotPass',
+            data: { email: email },
+            success: function (res) {
+                Lib.OffSpinnersButton(tthis, elementLoading);
+                if (res.status == 1) {
+                    Lib.ShowModalOtpFogotPass();
+                }
+                else {
+                    Lib.DisplayError(res.message);
+                }
+            }
+        });
+    }
+    var ShowModalOtpFogotPass = function () {
+        $('#md_bottom').modal('hide');
+        $('#md_bottom_Body').html('');
+        $.ajax({
+            type: "GET",
+            url: '/User/ShowModalOtpFogotPass',
+            beforeSend: function () {
+                $.blockUI({
+                    message: '<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
+                });
+            },
+            success: function (res) {
+                setTimeout(() => {
+                    $.unblockUI();
+                    $('#md_bottom_Body').html(res);
+                    $('#md_bottom').attr('style', '-webkit-animation: slideInUp 0.5s ease-in-out;animation: slideInUp 0.5s ease-in-out;');
+                    $('#md_bottom').modal('show');
+                }, 500);
+            }
+        });
+    }
+    var ShowModalChangePass = function () {
+        $('#md_bottom').modal('hide');
+        $('#md_bottom_Body').html('');
+        $.ajax({
+            type: "GET",
+            url: '/User/ShowModalChangePass',
+            beforeSend: function () {
+                $.blockUI({
+                    message: '<div class="lds-roller"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>',
+                });
+            },
+            success: function (res) {
+                setTimeout(() => {
+                    $.unblockUI();
+                    $('#md_bottom_Body').html(res);
+                    $('#md_bottom').attr('style', '-webkit-animation: slideInUp 0.5s ease-in-out;animation: slideInUp 0.5s ease-in-out;');
+                    $('#md_bottom').modal('show');
+                }, 500);
+            }
+        });
+    }
+    var RememberLinkModal = function () {
+        Lib.CreateCookie('say2tv_remember_link', 1, 1);
+        $('#md_display_center').modal('hide');
+    }
+    var CheckCookiesRememberLinkModal = function () {
+        if (Lib.ReadCookie('say2tv_remember_link') == '1') {
+        }
+        else {
+            setTimeout(() => {
+                $('#md_display_center').modal('show');
+            }, "2000");
+        }
+    }
+    return {
+        CreateCookie: CreateCookie,
+        ReadCookie: ReadCookie,
+        DeleteCookie: DeleteCookie,
+        GetUrlVars: GetUrlVars,
+        DisplayWaring: DisplayWaring,
+        DisplayError: DisplayError,
+        DisplaySuccess: DisplaySuccess,
+        TypingNumber: TypingNumber,
+        OnSpinnersButton: OnSpinnersButton,
+        OffSpinnersButton: OffSpinnersButton,
+        ValidatePhone: ValidatePhone,
+        ValidateEmail: ValidateEmail,
+        ShowWaringDeveloping: ShowWaringDeveloping,
+        ChooseLeague: ChooseLeague,
+        GetDateTimeToString: GetDateTimeToString,
+        ConvertStringToDate: ConvertStringToDate,
+        ShowModalSearch: ShowModalSearch,
+        CheckCookiesOdds: CheckCookiesOdds,
+        ShowModalLogin: ShowModalLogin,
+        ShowModalRegister: ShowModalRegister,
+        HandleLoginModal: HandleLoginModal,
+        HandleRegisterModal: HandleRegisterModal,
+        ShowModalOtp: ShowModalOtp,
+        HandleVerifyOtp: HandleVerifyOtp,
+        ShowModalFogotPass: ShowModalFogotPass,
+        HandleFogotPass: HandleFogotPass,
+        ShowModalChangePass: ShowModalChangePass,
+        DisplayPopupDeveloping: DisplayPopupDeveloping,
+        ShowModalOtpFogotPass: ShowModalOtpFogotPass,
+        RememberLinkModal: RememberLinkModal,
+        CheckCookiesRememberLinkModal: CheckCookiesRememberLinkModal
+    }
+}

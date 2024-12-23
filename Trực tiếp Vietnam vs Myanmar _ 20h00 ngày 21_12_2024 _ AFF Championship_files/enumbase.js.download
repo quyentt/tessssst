@@ -1,0 +1,117 @@
+﻿const TypeMenuHome = Object.freeze(
+    {
+        "Live": 1,
+        "Suggested": 2,
+        "Today": 3,
+    });
+
+const TypeMenuSchedule = Object.freeze(
+    {
+        "Previous": 1,
+        "Today": 2,
+        "Upcoming": 3,
+        "Live": 4
+    });
+
+const TypeMenuLive = Object.freeze(
+    {
+        "All": 1,
+        "Livestream": 2,
+    });
+
+const TypeSearch = Object.freeze(
+    {
+        "Schedule": 1,
+        "Home": 2,
+        "Live": 3,
+    });
+
+const TypeMenuSearch = Object.freeze(
+    {
+        "All": 1,
+        "Country": 2,
+        "Leagues": 3,
+    });
+
+const DepartmentSchedule = Object.freeze(
+    {
+        "All": 1,
+        "Football": 2,
+        "Basketball": 3,
+        "Volleyball": 4,
+    });
+
+const TypeMenuOdds = Object.freeze(
+    {
+        "MatchOdds": 1,
+        "CornerRafters": 2,
+        "OverUnder": 3,
+    });
+
+const TypeMenuStatistical = Object.freeze(
+    {
+        "Statistical": 1,
+        "Lineup": 2,
+        "Chat": 3,
+        "Development": 4,
+        "H2H": 5,
+        "BXH": 6,
+    });
+
+const Leagues = Object.freeze(
+    {
+        "CostaRica2Liga": 728,
+    });
+
+const TypeDetailLive = Object.freeze(
+    {
+        "Default": 1,
+        "Match3D": 2,
+        "LiveStream": 3,
+    });
+
+const TypeOdds = Object.freeze(
+    {
+        "Asia": 1,
+        "BS": 2,
+        "EU": 3,
+        "CR": 4,
+    });
+
+const TypeMenuMatchModal = Object.freeze(
+    {
+        "CungGiaiDau": 1,
+        "XemTranKhac": 2,
+    });
+
+const EnumIncidentPosition = Object.freeze(
+    {
+        "Home": 1,
+        "Away": 2,
+    });
+
+const TypeMenuSearchLeague = Object.freeze(
+    {
+        "LichThiDau": 1,
+        "KetQua": 2,
+    });
+
+const EnumTypeMenuSport = Object.freeze(
+    {
+        "Football": 1,
+        "Basketball": 2,
+        "Tennis": 3,
+        "Bia": 4,
+        "Badminton": 5,
+        "Esports": 6,
+        "Pickeball": 7,
+        "Event": 8,
+        "Ufc": 9,
+    });
+
+const TypeMenuUser = Object.freeze(
+    {
+        "ThanhVien": 1,
+        "YeuThich": 2,
+        "CaiDat": 3,
+    });

@@ -1,0 +1,1621 @@
+﻿.boxSingleLive {
+    margin-top: 5px;
+}
+
+    .boxSingleLive .box-player {
+        width: 100%;
+        float: left;
+        padding: 10px;
+    }
+
+        .boxSingleLive .box-player label {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: var(--LabelMediumLineHeight);
+            letter-spacing: var(--LabelMediumTracking);
+            text-align: left;
+            color: white
+        }
+
+        .boxSingleLive .box-player .img-avatar {
+            width: 28px;
+            height: 28px;
+            border-radius: 100%;
+        }
+
+        .boxSingleLive .box-player .left-box-player {
+            width: 45%;
+            float: left;
+        }
+
+        .boxSingleLive .box-player .center-box-player {
+            width: 10%;
+            float: left;
+            text-align: center;
+        }
+
+        .boxSingleLive .box-player .right-box-player {
+            width: 45%;
+            float: left;
+            text-align: end;
+        }
+
+
+    .boxSingleLive .popup-send-chat {
+        width: 480px;
+        float: left;
+        border-radius: 24px 24px 0px 0px;
+        background: #1C1C1C;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 15px;
+        position: fixed;
+        bottom: 0;
+    }
+
+        .boxSingleLive .popup-send-chat .box-login {
+            width: 100%;
+            float: left;
+            padding-bottom: 10px;
+        }
+
+            .boxSingleLive .popup-send-chat .box-login .title-box-login {
+                font-size: 12px;
+                font-weight: 600;
+                line-height: var(--LabelMediumLineHeight);
+                letter-spacing: var(--LabelMediumTracking);
+                text-align: center;
+                color: white;
+                padding-bottom: 15px
+            }
+
+            .boxSingleLive .popup-send-chat .box-login .button-box-login {
+                width: 100%;
+                float: left;
+                padding-top: 15px;
+            }
+
+            .boxSingleLive .popup-send-chat .box-login .desc-box-login {
+                width: 100%;
+                float: left;
+                text-align: center;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+
+                .boxSingleLive .popup-send-chat .box-login .desc-box-login label {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: var(--LabelMediumLineHeight);
+                    letter-spacing: var(--LabelMediumTracking);
+                    color: #9E9E9E;
+                }
+
+                .boxSingleLive .popup-send-chat .box-login .desc-box-login a {
+                    font-size: 12px;
+                    font-weight: 400;
+                    line-height: var(--LabelMediumLineHeight);
+                    letter-spacing: var(--LabelMediumTracking);
+                    color: #34C759;
+                }
+
+        .boxSingleLive .popup-send-chat .box-chat {
+            width: 100%;
+            float: left;
+        }
+
+    .boxSingleLive .address-infomation {
+        width: 100%;
+        float: left;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+
+        .boxSingleLive .address-infomation .icon-address-infomation {
+            width: 10%;
+            float: left;
+        }
+
+        .boxSingleLive .address-infomation .text-address-infomation {
+            width: 90%;
+            float: left;
+        }
+
+            .boxSingleLive .address-infomation .text-address-infomation .title-text-address-infomation {
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 12px;
+                text-align: left;
+                color: #9E9E9E;
+            }
+
+            .boxSingleLive .address-infomation .text-address-infomation .desc-text-address-infomation {
+                font-size: 12px;
+                font-weight: 600;
+                line-height: var(--LabelMediumLineHeight);
+                letter-spacing: var(--LabelMediumTracking);
+                text-align: left;
+                color: white;
+            }
+
+    .boxSingleLive .referee-infomation {
+        width: 100%;
+        float: left;
+        padding-top: 15px;
+        padding-left: 15px;
+    }
+
+        .boxSingleLive .referee-infomation .icon-referee-infomation {
+            width: 10%;
+            float: left;
+        }
+
+        .boxSingleLive .referee-infomation .text-referee-infomation {
+            width: 40%;
+            float: left;
+        }
+
+            .boxSingleLive .referee-infomation .text-referee-infomation .title-text-referee-infomation {
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 12px;
+                text-align: left;
+                color: #9E9E9E;
+            }
+
+            .boxSingleLive .referee-infomation .text-referee-infomation .desc-text-referee-infomation {
+                font-size: 12px;
+                font-weight: 600;
+                line-height: var(--LabelMediumLineHeight);
+                letter-spacing: var(--LabelMediumTracking);
+                text-align: left;
+                color: white;
+            }
+
+        .boxSingleLive .referee-infomation .other-referee-infomation {
+            width: 50%;
+            float: left;
+            display: flex;
+        }
+
+            .boxSingleLive .referee-infomation .other-referee-infomation .box-other-referee-infomation-default {
+                width: 62px;
+                height: 32px;
+                padding: 8px 6px 8px 6px;
+                gap: 10px;
+                border-radius: 6px;
+                background: #FFFFFF1A;
+                border: 0.5px solid #F8BE4A;
+                font-size: 12px;
+                font-weight: 600;
+                line-height: var(--LabelMediumLineHeight);
+                letter-spacing: var(--LabelMediumTracking);
+                text-align: center;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-left: 20px;
+            }
+
+    .boxSingleLive hr {
+        width: 100%;
+        float: left;
+        color: #b1a6a6;
+    }
+
+    .boxSingleLive .title {
+        width: 100%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        z-index: 2;
+    }
+
+        .boxSingleLive .title .left-title {
+            width: 25%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .boxSingleLive .title .left-title .text {
+                font-size: 10px;
+                font-weight: 600;
+                line-height: 12.1px;
+                text-align: center;
+                color: #34C759;
+            }
+
+        .boxSingleLive .title .center-title {
+            width: 60%;
+            float: left;
+            text-align: center;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.0601312) 20.5%, rgba(255, 255, 255, 0.1) 50.38%, rgba(255, 255, 255, 0.0601312) 79.69%, rgba(255, 255, 255, 0) 100%);
+        }
+
+            .boxSingleLive .title .center-title .teamName {
+                font-size: 12px;
+                font-weight: 500;
+                line-height: var(--LabelMediumLineHeight);
+                letter-spacing: var(--LabelMediumTracking);
+                text-align: left;
+                color: white;
+            }
+
+            .boxSingleLive .title .center-title .score {
+                padding: 2px 6px 2px 6px;
+                gap: 10px;
+                border-radius: 4px;
+                font-size: 14px;
+                font-weight: 600;
+                line-height: 16px;
+                text-align: center;
+                color: #81F19D;
+                border: 0.5px solid #34C759;
+                border-bottom: none;
+            }
+
+        .boxSingleLive .title .right-title {
+            width: 15%;
+            float: left;
+        }
+
+    .boxSingleLive .odds {
+        width: 100%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+        position: relative;
+        z-index: 2;
+    }
+
+        .boxSingleLive .odds .colorRed {
+            color: #FF3205;
+        }
+
+        .boxSingleLive .odds .colorGreen {
+            color: #34C759;
+        }
+
+        .boxSingleLive .odds .colorGray {
+            color: #9E9E9E;
+        }
+
+        .boxSingleLive .odds .left-odds {
+            width: 35%;
+            float: left;
+        }
+
+            .boxSingleLive .odds .left-odds .odds-team {
+                width: 117px;
+                float: left;
+                margin-left: 5px;
+            }
+
+                .boxSingleLive .odds .left-odds .odds-team .odds-team-name {
+                    font-size: 10px;
+                    font-weight: 400;
+                    line-height: 10px;
+                    text-align: left;
+                    color: #9E9E9E;
+                }
+
+                .boxSingleLive .odds .left-odds .odds-team .odds-hadicap {
+                    font-size: 10px;
+                    font-weight: 500;
+                    line-height: 12px;
+                    text-align: left;
+                    color: #007AFF;
+                }
+
+                .boxSingleLive .odds .left-odds .odds-team .odds-win {
+                    font-size: 12px;
+                    font-weight: 500;
+                    line-height: var(--LabelMediumLineHeight);
+                    letter-spacing: var(--LabelMediumTracking);
+                    text-align: left;
+                }
+
+            .boxSingleLive .odds .left-odds .box-botton-odds {
+                opacity: 0.5px;
+                background: #FFFFFF1A;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                padding: 3px;
+                width: 117px;
+            }
+
+                .boxSingleLive .odds .left-odds .box-botton-odds .active {
+                    background: var(--Colors-Green, #34C759);
+                    border-radius: 5px;
+                }
+
+                .boxSingleLive .odds .left-odds .box-botton-odds .btn-odds {
+                    width: 44px;
+                    height: 20px;
+                    padding: 4px 11px 4px 11px;
+                    gap: 10px;
+                    font-size: 10px;
+                    font-weight: 500;
+                    line-height: 12px;
+                    text-align: center;
+                    color: white;
+                }
+
+        .boxSingleLive .odds .right-odds {
+            width: 65%;
+            float: left;
+            margin-top: 3px;
+        }
+
+            .boxSingleLive .odds .right-odds .table-odds {
+                gap: 0px;
+                border-radius: 6px;
+                opacity: 0.5px;
+                background: #FFFFFF1A;
+                width: 90%;
+                margin-left: 15px;
+                padding: 3px;
+            }
+
+    .boxSingleLive .tracking-watch {
+        width: 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        margin-top: -100px;
+        position: sticky;
+        z-index: 1;
+    }
+
+        .boxSingleLive .tracking-watch #iframe_tracking_watch {
+            width: 100%;
+            height: 365px;
+            position: relative;
+            top: 100px;
+            left: 0;
+        }
+
+    .boxSingleLive .tracking-watch-bottom {
+        width: 100%;
+        float: left;
+        padding-top: 10px;
+        height: 105px;
+        overflow: hidden;
+        position: relative;
+    }
+
+        .boxSingleLive .tracking-watch-bottom #iframe_tracking_watch_bottom {
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            width: 100%;
+            height: 105px;
+        }
+
+    .boxSingleLive .video-hightlight {
+        width: 100%;
+        float: left;
+        margin-top: 10px;
+    }
+
+        .boxSingleLive .video-hightlight #iframe_video_hightlight {
+            width: 100%;
+            height: 365px;
+        }
+
+    .boxSingleLive .player-video {
+        width: 100%;
+        float: left;
+        margin-top: 10px;
+    }
+
+    .boxSingleLive .menu-single-live {
+        width: 100%;
+        float: left;
+    }
+
+        .boxSingleLive .menu-single-live .message {
+            width: 15%;
+            float: left;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            border-right: 1px solid #FFFFFF1A;
+            text-align: center;
+        }
+
+            .boxSingleLive .menu-single-live .message .lblCountMessage {
+                width: 22px;
+                height: 12px;
+                padding: 2px;
+                gap: 10px;
+                border-radius: 8px;
+                opacity: 0px;
+                background: #FF3205;
+                font-size: 8px;
+                font-weight: 600;
+                line-height: 8px;
+                text-align: center;
+                color: white;
+                position: absolute;
+                margin-top: -3px;
+                margin-left: -15px;
+            }
+
+        .boxSingleLive .menu-single-live .menu {
+            width: 85%;
+            float: left;
+        }
+
+.box-development {
+    width: 100%;
+    float: left;
+    gap: 0px;
+    opacity: 0.5px;
+    background: #FFFFFF1A;
+}
+
+    .box-development .box-attack {
+        width: 100%;
+        float: left;
+        padding-top: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+        .box-development .box-attack .box-attack-default {
+            width: 100%;
+            float: left;
+        }
+
+            .box-development .box-attack .box-attack-default .title-box-attack-default {
+                font-size: 12px;
+                font-weight: 600;
+                line-height: 12.1px;
+                text-align: center;
+                margin-top: 5px;
+                color: white;
+            }
+
+            .box-development .box-attack .box-attack-default .content-box-attack-default {
+                width: 100%;
+                float: left;
+                padding-top: 7px;
+                text-align: center;
+                margin-left: 5px;
+                display: flex;
+                align-items: center;
+            }
+
+                .box-development .box-attack .box-attack-default .content-box-attack-default label {
+                    font-size: 12px;
+                    font-weight: 600;
+                    line-height: 10px;
+                    letter-spacing: -0.008em;
+                }
+
+        .box-development .box-attack .box-attack-left {
+            width: 30%;
+            float: left;
+        }
+
+        .box-development .box-attack .box-attack-center {
+            width: 33%;
+            float: left;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .box-development .box-attack .box-attack-right {
+            width: 30%;
+            float: left;
+        }
+
+    .box-development .box-card {
+        width: 100%;
+        float: left;
+        padding: 15px;
+    }
+
+        .box-development .box-card label {
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 10px;
+            text-align: center;
+            color: #9E9E9E;
+        }
+
+        .box-development .box-card .corner {
+            width: 33%;
+            float: left;
+        }
+
+        .box-development .box-card .card-red {
+            width: 33%;
+            float: left;
+        }
+
+        .box-development .box-card .card-yellow {
+            width: 33%;
+            float: left;
+        }
+
+
+        .box-development .box-card .box-card-left {
+            width: 25%;
+            float: left;
+        }
+
+        .box-development .box-card .box-card-center {
+            width: 50%;
+            float: left;
+            margin-top: -4px;
+        }
+
+        .box-development .box-card .box-card-right {
+            width: 25%;
+            float: left;
+            text-align: end;
+        }
+
+        .box-development .box-card .box-car-center-default {
+            width: 100%;
+            float: left;
+        }
+
+            .box-development .box-card .box-car-center-default .title-box-car-center-default {
+                width: 100%;
+                float: left;
+                text-align: center;
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 12px;
+                text-align: center;
+                color: white;
+                background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.0601312) 20.5%, rgba(255, 255, 255, 0.1) 50.38%, rgba(255, 255, 255, 0.0601312) 79.69%, rgba(255, 255, 255, 0) 100%);
+            }
+
+            .box-development .box-card .box-car-center-default .content-box-car-center-default {
+                width: 100%;
+                float: left;
+                margin-top: -10px;
+            }
+
+.box-event {
+    width: 100%;
+    float: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: #222222;
+}
+
+    .box-event .box-note {
+        width: 100%;
+        float: left;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 12px;
+        text-align: left;
+        color: white;
+    }
+
+    .box-event .box-event-left {
+        width: 100%;
+        float: left;
+        padding-left: 15px;
+    }
+
+        .box-event .box-event-left .card-or-goal {
+            width: 100%;
+            float: left;
+            margin-top: 5px;
+            margin-left: 10px;
+        }
+
+        .box-event .box-event-left .substitution {
+            width: 100%;
+            float: left;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+            .box-event .box-event-left .substitution .player {
+                width: 80%;
+                float: left;
+            }
+
+                .box-event .box-event-left .substitution .player .playerout {
+                    margin-top: -10px;
+                }
+
+            .box-event .box-event-left .substitution .icon {
+                width: 20%;
+                float: left;
+            }
+
+        .box-event .box-event-left label {
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 12px;
+            color: white;
+        }
+
+        .box-event .box-event-left .home-event {
+            width: 42%;
+            float: left;
+            text-align: center;
+        }
+
+        .box-event .box-event-left .time-event {
+            width: 15%;
+            float: left;
+            text-align: center;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+            .box-event .box-event-left .time-event .time {
+                width: 36px;
+                height: 16px;
+                padding: 2px;
+                gap: 10px;
+                border-radius: 100px;
+                border: 1px solid #6e6e6e;
+                backdrop-filter: blur(10px);
+                font-size: 10px;
+                font-weight: 500;
+                line-height: 12px;
+                text-align: center;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .box-event .box-event-left .time-event .time.active {
+                    border: none;
+                    background: #34C759;
+                }
+
+            .box-event .box-event-left .time-event .divider {
+                width: 2px;
+                height: 20px;
+                background-color: #878787;
+            }
+
+        .box-event .box-event-left .away-event {
+            width: 42%;
+            float: left;
+        }
+
+    .box-event .box-event-right {
+        width: 100%;
+        float: left;
+    }
+
+        .box-event .box-event-right .box-note {
+            width: 100%;
+            float: left;
+            padding: 8px;
+            gap: 10px;
+            border-radius: 6px 0px 0px 6px;
+            opacity: 0px;
+            border: 0.5px solid #6e6e6e;
+            background: #FFFFFF1A;
+            border-right: none;
+        }
+
+            .box-event .box-event-right .box-note .box-note-default {
+                width: 100%;
+                float: left;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .box-event .box-event-right .box-note .box-note-default .icon-box-note-default {
+                    width: 40%;
+                    float: left;
+                }
+
+                .box-event .box-event-right .box-note .box-note-default .text-box-note-default {
+                    width: 60%;
+                    float: left;
+                    font-size: 10px;
+                    font-weight: 500;
+                    line-height: 12px;
+                    text-align: left;
+                    color: white;
+                }
+
+.content-chat {
+    width: 100%;
+    float: left;
+    padding: 10px;
+}
+
+    .content-chat .box-content-chat-user {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .content-chat .gim-chat {
+        width: 100%;
+        float: left;
+        border-radius: 6px;
+        background: var(--background-green, #81F19D1A);
+        display: flex;
+        align-items: center;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+        border: 0.5px solid #34C759;
+        border-bottom: none;
+    }
+
+        .content-chat .gim-chat .icon {
+            display: flex;
+            margin-top: -10px;
+        }
+
+        .content-chat .gim-chat img {
+            width: 13px;
+            height: 16px;
+        }
+
+        .content-chat .gim-chat .text-content {
+            width: 100%;
+            float: left;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 12px;
+            text-align: left;
+            text-underline-position: from-font;
+            text-decoration-skip-ink: none;
+        }
+
+
+
+
+    .content-chat .line-chat {
+        width: 100%;
+        float: left;
+    }
+
+    .content-chat .box-level {
+        width: 10%;
+        float: left;
+        margin-top: 3px;
+    }
+
+        .content-chat .box-level .box-level-default {
+            width: 30px;
+            height: 14px;
+            font-size: 8px;
+            font-weight: 400;
+            line-height: 10px;
+            text-align: center;
+            color: white;
+            padding: 2px 3px 2px 3px;
+            gap: 10px;
+            border-radius: 4px;
+            border: 1px solid #34C759;
+            background: var(--background-green, #81F19D1A);
+        }
+
+    .content-chat .display-chat {
+        width: 90%;
+        float: left;
+        font-size: 12px;
+        font-weight: 400;
+        line-height: var(--LabelMediumLineHeight);
+        letter-spacing: var(--LabelMediumTracking);
+        text-align: left;
+    }
+
+        .content-chat .display-chat .fullname {
+            color: #81F19D;
+        }
+
+        .content-chat .display-chat .contentchat {
+            color: white;
+        }
+
+.box-statistical {
+    width: 100%;
+    float: left;
+    padding-top: 10px;
+}
+
+    .box-statistical .content-box-statistical {
+        width: 100%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+        .box-statistical .content-box-statistical .box-content-box-statistical {
+            width: 100%;
+            float: left;
+            background: #FFFFFF1A;
+            padding: 15px;
+            padding-bottom: 0px;
+            border-radius: 0px 0px 8px 8px;
+        }
+
+            .box-statistical .content-box-statistical .box-content-box-statistical .title-content-box-statistical {
+                width: 100%;
+                float: left;
+                /*display: flex;
+                align-items: center;
+                justify-content: center;*/
+            }
+
+                .box-statistical .content-box-statistical .box-content-box-statistical .title-content-box-statistical .text-title-content-box-statistical {
+                    width: 50%;
+                    float: left;
+                }
+
+                    .box-statistical .content-box-statistical .box-content-box-statistical .title-content-box-statistical .text-title-content-box-statistical label {
+                        font-size: 12px;
+                        font-weight: 600;
+                        line-height: var(--LabelMediumLineHeight);
+                        letter-spacing: var(--LabelMediumTracking);
+                        text-align: left;
+                        color: white;
+                    }
+
+                .box-statistical .content-box-statistical .box-content-box-statistical .title-content-box-statistical .button-title-content-box-statistical {
+                    width: 50%;
+                    float: left;
+                    display: flex;
+                    justify-content: end;
+                }
+
+                    .box-statistical .content-box-statistical .box-content-box-statistical .title-content-box-statistical .button-title-content-box-statistical .box-default-button-title-content-box-statistical {
+                        background: #FFFFFF1A;
+                        display: flex;
+                        align-items: center;
+                        border-radius: 5px;
+                        padding: 3px;
+                        width: 140px;
+                    }
+
+                        .box-statistical .content-box-statistical .box-content-box-statistical .title-content-box-statistical .button-title-content-box-statistical .box-default-button-title-content-box-statistical .btn-search-match {
+                            width: 70px;
+                            height: 20px;
+                            padding: 4px 11px 4px 11px;
+                            gap: 10px;
+                            font-size: 10px;
+                            font-weight: 500;
+                            line-height: 12px;
+                            text-align: center;
+                            color: white;
+                        }
+
+                        .box-statistical .content-box-statistical .box-content-box-statistical .title-content-box-statistical .button-title-content-box-statistical .box-default-button-title-content-box-statistical .active {
+                            background: var(--Colors-Green, #34C759);
+                            border-radius: 5px;
+                        }
+
+            .box-statistical .content-box-statistical .box-content-box-statistical .title-box-content-box-statistical {
+                font-size: 10px;
+                font-weight: 400;
+                line-height: 12px;
+                text-align: center;
+                color: white;
+            }
+
+            .box-statistical .content-box-statistical .box-content-box-statistical .left-box-content-box-statistical {
+                width: 20%;
+                float: left;
+            }
+
+            .box-statistical .content-box-statistical .box-content-box-statistical .center-box-content-box-statistical {
+                width: 60%;
+                float: left;
+                text-align: center;
+            }
+
+            .box-statistical .content-box-statistical .box-content-box-statistical .progress-bar-custom {
+                width: 100%;
+                float: left;
+                margin-top: 3px;
+            }
+
+                .box-statistical .content-box-statistical .box-content-box-statistical .progress-bar-custom .progress-bar-left {
+                    width: 49%;
+                    float: left;
+                }
+
+                .box-statistical .content-box-statistical .box-content-box-statistical .progress-bar-custom .progress-bar-right {
+                    width: 49%;
+                    float: left;
+                    text-align: end;
+                }
+
+            .box-statistical .content-box-statistical .box-content-box-statistical .right-box-content-box-statistical {
+                width: 20%;
+                float: left;
+                text-align: end;
+            }
+
+            .box-statistical .content-box-statistical .box-content-box-statistical .ball-possession-rate {
+                width: 100%;
+                float: left;
+            }
+
+            .box-statistical .content-box-statistical .box-content-box-statistical .shot {
+                padding-top: 10px;
+                width: 100%;
+                float: left;
+            }
+
+
+                .box-statistical .content-box-statistical .box-content-box-statistical .shot .shot-goal {
+                    padding-top: 10px;
+                    width: 100%;
+                    float: left;
+                }
+
+                    .box-statistical .content-box-statistical .box-content-box-statistical .shot .shot-goal .home-shot-goal {
+                        width: 50%;
+                        float: left;
+                        background: var(--Color-4, #F8BE4A33);
+                        border-radius: 6px 0px 0px 6px;
+                        padding: 10px;
+                        padding-top: 0px;
+                        height: 72px;
+                    }
+
+                    .box-statistical .content-box-statistical .box-content-box-statistical .shot .shot-goal .away-shot-goal {
+                        width: 50%;
+                        float: left;
+                        background: var(--Colors-Blue, #165395);
+                        border-radius: 0px 6px 6px 0px;
+                        padding: 10px;
+                        padding-top: 0px;
+                        text-align: end;
+                        height: 72px;
+                    }
+
+                    .box-statistical .content-box-statistical .box-content-box-statistical .shot .shot-goal .title-missed-shot-goal {
+                        width: 100%;
+                        float: left;
+                        text-align: center;
+                        margin-top: -70px;
+                    }
+
+                    .box-statistical .content-box-statistical .box-content-box-statistical .shot .shot-goal .box-short-goal {
+                        width: 100%;
+                        float: left;
+                        text-align: center;
+                        margin-top: -32px;
+                    }
+
+                    .box-statistical .content-box-statistical .box-content-box-statistical .shot .shot-goal .img-shot-goal {
+                        width: 100%;
+                        float: left;
+                        margin-top: -72px;
+                        text-align: center;
+                    }
+
+    .box-statistical .button-box-statistical {
+        width: 100%;
+        float: left;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+        .box-statistical .button-box-statistical .btn-menu-statistal {
+            width: 30%;
+            height: 30px;
+            padding: 4px 11px 4px 11px;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 12px;
+            text-align: center;
+            color: white;
+            margin-left: 10px;
+        }
+
+            .box-statistical .button-box-statistical .btn-menu-statistal.active {
+                border-top: 1px solid #34C759;
+                border-radius: 5px 5px 0px 0px;
+                background: #FFFFFF1A;
+            }
+
+            .box-statistical .button-box-statistical .btn-menu-statistal:hover {
+                border-top: 1px solid #34C759;
+                border-radius: 5px 5px 0px 0px;
+                background: #FFFFFF1A;
+            }
+
+.box-score-filed {
+    width: 100%;
+    float: left;
+    background-image: url('../images/banner/banner-score-field-3.png');
+    background-size: 100% 100%;
+    height: 790px;
+    margin-top: 10px;
+}
+
+    .box-score-filed .home-lineup {
+        width: 100%;
+        float: left;
+        height: 43%;
+    }
+
+    .box-score-filed .away-lineup {
+        width: 100%;
+        float: left;
+        height: 43%;
+    }
+
+    .box-score-filed .title-team-home {
+        width: 100%;
+        float: left;
+        height: 5%;
+        padding-top: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+        .box-score-filed .title-team-home label {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: var(--LabelMediumLineHeight);
+            letter-spacing: var(--LabelMediumTracking);
+            text-align: left;
+            color: white;
+        }
+
+        .box-score-filed .title-team-home .left-title-team-home {
+            width: 50%;
+            float: left;
+        }
+
+        .box-score-filed .title-team-home .right-title-team-home {
+            width: 50%;
+            float: left;
+            text-align: end;
+        }
+
+    .box-score-filed .line {
+        display: -moz-flex;
+        display: -ms-flex;
+        display: -o-flex;
+        display: flex;
+        -moz-flex-direction: row;
+        -o-flex-direction: row;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0 25px;
+        width: 100%;
+        float: left;
+    }
+
+        .box-score-filed .line .player {
+            text-align: center;
+            width: 100%;
+            position: relative;
+        }
+
+            .box-score-filed .line .player .dress_team {
+                background-image: url('../images/icon/icon-user-red.png');
+                background-size: 30px 30px;
+                height: 30px;
+                margin: 0 auto;
+                position: relative;
+                width: 30px;
+            }
+
+            .box-score-filed .line .player .dress_team_away {
+                background-image: url('../images/icon/icon-user-blue.png');
+                background-size: 30px 30px;
+                height: 30px;
+                margin: 0 auto;
+                position: relative;
+                width: 30px;
+            }
+
+            .box-score-filed .line .player .name_player {
+                font-size: 8px;
+                font-weight: 400;
+                line-height: 12px;
+                text-align: center;
+                color: white;
+                margin-top: 5px;
+            }
+
+            .box-score-filed .line .player .num_player {
+                border-radius: 100px;
+                font-size: 8px;
+                font-weight: 400;
+                line-height: 12px;
+                text-align: center;
+                color: #FFFFFF;
+                background: #3D3D3D;
+                position: relative;
+                top: 10px;
+                right: 8px;
+                width: 12px;
+                height: 12px;
+            }
+
+            .box-score-filed .line .player .num_index_home {
+                width: 16px;
+                height: 12px;
+                padding: 0px 1px 0px 1px;
+                border-radius: 2px;
+                position: relative;
+                font-size: 8px;
+                font-weight: 400;
+                line-height: 12px;
+                text-align: center;
+                color: white;
+                background: #FF6B18;
+                top: -18px;
+                left: 20px;
+            }
+
+            .box-score-filed .line .player .num_index_away {
+                width: 16px;
+                height: 12px;
+                padding: 0px 1px 0px 1px;
+                border-radius: 2px;
+                position: relative;
+                font-size: 8px;
+                font-weight: 400;
+                line-height: 12px;
+                text-align: center;
+                color: white;
+                background: #007AFF;
+                top: -18px;
+                left: 20px;
+            }
+
+    .box-score-filed .box-formation-team {
+        width: 100%;
+        float: left;
+        display: flex;
+        justify-content: center;
+        height: 2%;
+    }
+
+    .box-score-filed .formation-team {
+        padding: 2px 9px 2px 9px;
+        gap: 10px;
+        border-radius: 100px;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12px;
+        text-align: center;
+        background: white;
+        color: #9E9E9E;
+    }
+
+.box-team-default {
+    width: 100%;
+    float: left;
+    background: #FFFFFF1A;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+    .box-team-default .title-box-team-default {
+        padding-left: 10px;
+        padding-top: 10px;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: var(--LabelMediumLineHeight);
+        letter-spacing: var(--LabelMediumTracking);
+        text-align: left;
+        color: white;
+        display: flex;
+    }
+
+    .box-team-default .title-team-box-team-default {
+        width: 100%;
+        float: left;
+        gap: 5px;
+        background: #FFFFFF1A;
+        margin-top: 10px;
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 12px;
+        color: white;
+    }
+
+        .box-team-default .title-team-box-team-default .home-team-box-team-default {
+            width: 50%;
+            float: left;
+            text-align: center;
+            padding: 6px 25px 6px 25px;
+            border-right: 1px solid #474444;
+        }
+
+        .box-team-default .title-team-box-team-default .away-team-box-team-default {
+            width: 50%;
+            float: left;
+            text-align: center;
+            padding: 6px 25px 6px 25px;
+        }
+
+    .box-team-default .home-team-default {
+        width: 50%;
+        float: left;
+    }
+
+    .box-team-default .away-team-default {
+        width: 50%;
+        float: left;
+    }
+
+    .box-team-default .team-default {
+        padding-left: 10px;
+        display: flex;
+        align-items: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-right: 1px solid #474444;
+        border-bottom: 1px solid #474444;
+    }
+
+        .box-team-default .team-default label {
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 12px;
+            text-align: left;
+            color: white;
+        }
+
+        .box-team-default .team-default .number_shirt {
+            width: 16px;
+            height: 16px;
+            gap: 10px;
+            border-radius: 2px;
+            background: #FFFFFF1A;
+            border: 0.5px solid #6e6e6e;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 12px;
+            text-align: center;
+            color: #9E9E9E;
+        }
+
+        .box-team-default .team-default .number_index_home {
+            width: 16px;
+            height: 12px;
+            padding: 0px 1px 0px 1px;
+            gap: 10px;
+            border-radius: 2px;
+            position: relative;
+            font-size: 8px;
+            font-weight: 400;
+            line-height: 12px;
+            text-align: center;
+            color: white;
+            background: #FF6B18;
+            top: -12px;
+            left: 25px;
+        }
+
+        .box-team-default .team-default .number_index_away {
+            width: 16px;
+            height: 12px;
+            padding: 0px 1px 0px 1px;
+            gap: 10px;
+            border-radius: 2px;
+            position: relative;
+            font-size: 8px;
+            font-weight: 400;
+            line-height: 12px;
+            text-align: center;
+            color: white;
+            background: #007AFF;
+            top: -12px;
+            left: 25px;
+        }
+
+        .box-team-default .team-default .reason-injury {
+            position: relative;
+            top: -12px;
+            left: 25px;
+        }
+
+            .box-team-default .team-default .reason-injury img {
+                width: 12px;
+            }
+
+.note-lineup-default {
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 12px;
+    text-align: left;
+    color: white;
+    margin-bottom: 10px;
+}
+
+    .note-lineup-default img {
+        width: 16px;
+        margin-right: 5px;
+    }
+
+.box-h2h {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+    .box-h2h .title-h2h {
+        width: 100%;
+        float: left;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+        .box-h2h .title-h2h .text-title-h2h {
+            width: 50%;
+            float: left;
+        }
+
+            .box-h2h .title-h2h .text-title-h2h label {
+                font-size: 12px;
+                font-weight: 600;
+                line-height: var(--LabelMediumLineHeight);
+                letter-spacing: var(--LabelMediumTracking);
+                text-align: left;
+                color: white;
+            }
+
+        .box-h2h .title-h2h .button-title-h2h {
+            width: 50%;
+            float: left;
+            display: flex;
+            justify-content: end;
+        }
+
+            .box-h2h .title-h2h .button-title-h2h .box-button-title-h2h {
+                background: #FFFFFF1A;
+                display: flex;
+                align-items: center;
+                border-radius: 5px;
+                padding: 3px;
+                width: 140px;
+            }
+
+                .box-h2h .title-h2h .button-title-h2h .box-button-title-h2h .active {
+                    background: var(--Colors-Green, #34C759);
+                    border-radius: 5px;
+                }
+
+                .box-h2h .title-h2h .button-title-h2h .box-button-title-h2h .btn-search-match {
+                    width: 70px;
+                    height: 20px;
+                    padding: 4px 11px 4px 11px;
+                    gap: 10px;
+                    font-size: 10px;
+                    font-weight: 500;
+                    line-height: 12px;
+                    text-align: center;
+                    color: white;
+                }
+
+    .box-h2h .box-content-h2h {
+        width: 100%;
+        float: left;
+        padding: 8px 0px 8px 0px;
+        border-radius: 8px;
+        background: #FFFFFF1A;
+        margin-top: 10px;
+    }
+
+        .box-h2h .box-content-h2h .pencent-h2h {
+            width: 100%;
+            float: left;
+            font-size: 10px;
+            font-weight: 400;
+            line-height: 12px;
+            text-align: center;
+        }
+
+        .box-h2h .box-content-h2h .box-team-name {
+            padding: 8px;
+            gap: 10px;
+            border-radius: 4px;
+            opacity: 0px;
+            background: var(--background-green, #81F19D1A);
+            font-size: 12px;
+            font-weight: 600;
+            line-height: var(--LabelMediumLineHeight);
+            letter-spacing: var(--LabelMediumTracking);
+            text-align: left;
+            color: white;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+    .box-h2h .button-box-h2h {
+        width: 100%;
+        float: left;
+        margin-top: 10px;
+    }
+
+        .box-h2h .button-box-h2h .btn-team {
+            width: 30%;
+            height: 30px;
+            padding: 4px 11px 4px 11px;
+            font-size: 10px;
+            font-weight: 500;
+            line-height: 12px;
+            text-align: center;
+            color: white;
+        }
+
+            .box-h2h .button-box-h2h .btn-team:hover {
+                border-top: 1px solid #34C759;
+                border-radius: 5px 5px 0px 0px;
+                background: #FFFFFF1A;
+            }
+
+        .box-h2h .button-box-h2h .active {
+            border-top: 1px solid #34C759;
+            border-radius: 5px 5px 0px 0px;
+            background: #FFFFFF1A;
+        }
+
+.box-bxh {
+    width: 100%;
+    float: left;
+    margin-top: 10px;
+}
+
+    .box-bxh .search-season {
+        padding-left: 15px;
+        font-size: 10px;
+        font-weight: 400;
+        line-height: 12px;
+        text-align: left;
+        color: #9E9E9E;
+    }
+
+    .box-bxh .content-box-bxh {
+        margin-top: 10px;
+        width: 100%;
+        float: left;
+        border-radius: 24px;
+        background: #FFFFFF1A;
+        padding: 10px;
+    }
+
+        .box-bxh .content-box-bxh .title-content-box-bxh {
+            font-size: 12px;
+            font-weight: 600;
+            line-height: 12px;
+            color: white;
+            text-align: center;
+            padding-bottom: 10px;
+        }
+
+.table-modal-odds {
+    width: 100%;
+    float: left;
+    margin-top: 5px;
+    max-height: 300px;
+    overflow-y: auto;
+    scrollbar-width: none;
+    padding-bottom: 3px;
+}
+
+.td-leaguesname {
+    font-size: 8px !important;
+    font-weight: 400 !important;
+    line-height: 10px !important;
+    text-align: left !important;
+    color: #9E9E9E !important;
+}
+
+.td-lbl-score-ft {
+    padding: 2px 6px 2px 6px !important;
+    border-radius: 2px !important;
+    font-size: 10px !important;
+    font-weight: 400 !important;
+    line-height: 12px !important;
+    text-align: center !important;
+    color: white !important;
+    background: #FF3205 !important;
+}
+
+.lblHigh {
+    width: 14px;
+    height: 14px;
+    padding: 1px 2px 1px 2px;
+    gap: 10px;
+    border-radius: 2px;
+    background: #FFFFFF1A;
+}
+
+.icon-default {
+    font-size: 18px;
+    color: gray;
+}
+
+a {
+    color: none;
+    text-decoration: none;
+}
+
+[role="progressbar"] {
+    --percentage: var(--value);
+    --primary: #369;
+    --secondary: #adf;
+    --size: 33px;
+    animation: progress 2s 0.5s forwards;
+    width: var(--size);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    margin-left: 3px;
+}
+
+    [role="progressbar"]::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: conic-gradient(#423e0e calc(var(--percentage) * 1%), #FFEE32 0);
+        mask: radial-gradient(white 55%, transparent 0);
+        mask-mode: alpha;
+        -webkit-mask: radial-gradient(#0000 55%, #000 0);
+        -webkit-mask-mode: alpha;
+    }
+
+.progressbar .overlay {
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    background: black;
+    text-align: center;
+    color: white;
+}
+
+    .progressbar .overlay img {
+        width: 14px;
+        margin-top: -5px;
+    }
+
+.boxTemplateChat {
+    width: 100%;
+    float: left;
+    margin-bottom: 7px;
+}
+
+    .boxTemplateChat .resultTemplateChat {
+        background: #FFFFFF1A;
+        color: #9E9E9E;
+        font-size: 12px;
+        font-weight: 400;
+        border-radius: 100px;
+        margin-left: 3px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
