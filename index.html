@@ -85,14 +85,14 @@
                 }
     </style>
 </head>
-<body>
+<body class="body">
     <!-- Header -->
     <header id="header">
         <h1>Chat Header</h1>
     </header>
 
     <!-- Content -->
-    <div class="content" id="content" style="height: calc(100% - 200px);">
+    <div class="content" id="content" style="height: 100%">
         <p>Đây là nội dung có thể thay đổi hoặc kéo dài tùy ý.</p>
         <p>Nội dung thứ 2...</p>
         <p>Nội dung thứ 3...</p>
@@ -186,7 +186,7 @@
         if (window.visualViewport) {
            
             function resizeHandler() {
-                for (const sessionView of document.getElementsByClassName('content')) {
+                for (const sessionView of document.getElementsByClassName('body')) {
                     sessionView.style.height = window.visualViewport.height.toString() + 'px';
                     document.getElementsByTagName('html')[0].style.height = window.visualViewport.height.toString() + 'px';
                     alert(sessionView.style.height)
