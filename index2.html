@@ -96,7 +96,7 @@
     </style>
 </head>
 
-<body class="body">
+<body id="body">
     <!-- Header -->
     <header id="header">
         <h1>Chat Header</h1>
@@ -194,20 +194,29 @@
         <button>Gửi</button>
     </footer>
     <script>
-        if (window.visualViewport) {
+        const bottomBar = document.getElementById("footer");
+        const viewport = window.visualViewport;
 
-            alert(window.visualViewport.height);
+        function viewportHandler() {
+            const layoutViewport = document.getElementById("body");
 
-            function resizeHandler() {
-                for (const sessionView of document.getElementsByClassName('body')) {
-                    sessionView.style.height = window.visualViewport.height.toString() + 'px';
-                    document.getElementsByTagName('html')[0].style.height = window.visualViewport.height.toString() + 'px';
+            // Since the bar is position: fixed we need to offset it by the visual
+            // viewport's offset from the layout viewport origin.
+            const offsetLeft = viewport.offsetLeft;
+            const offsetTop =
+                viewport.height -
+                layoutViewport.getBoundingClientRect().height +
+                viewport.offsetTop;
 
-
-                }
-            }
-
-            window.visualViewport.addEventListener('resize', resizeHandler);
+            // You could also do this by setting style.left and style.top if you
+            // use width: 100% instead.
+            bottomBar.style.transform = `translate(${offsetLeft}px, ${offsetTop}px) scale(${
+    1 / viewport.scale
+  })`;
+        }
+        window.visualViewport.addEventListener("scroll", viewportHandler);
+        window.visualViewport.addEventListener("resize", viewportHandler);
+        indow.visualViewport.addEventListener('resize', resizeHandler);
         }
     </script>
 
