@@ -1,47 +1,25 @@
-<!DOCTYPE html>
-<!-- saved from url=(0034)https://8.222.254.171/home/Privacy -->
-<html lang="en" love-deals="879BC0364EB9EBEE3DBE71B15E175613" style="overflow: hidden;">
+<html lang="en" love-deals="879BC0364EB9EBEE3DBE71B15E175613">
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no, interactive-widget=resizes-content">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
     <title>Chat Layout</title>
     <style>
-        p {
-            margin: 0;
-        }
-        
-        body {
-            display: block;
-            margin: 0;
-        }
-        
-        footer {
-            position: fixed;
-            height: 60px;
-            background: blue;
-            bottom: 0;
-            width: 100%;
-            z-index: 500;
-        }
-        
         body,
         html {
             margin: 0;
             padding: 0;
-            height: auto;
+            height: 100%;
             display: flex;
             flex-direction: column;
             font-family: Arial, sans-serif;
             overflow: hidden;
             /* Ngăn trang bị cuộn ngoài ý muốn */
-            padding-top: env(safe-area-inset-top);
         }
         /* Header cố định trên đầu */
         
         header {
-            position: fixed;
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
@@ -52,7 +30,6 @@
             font-size: 18px;
             z-index: 1000;
             /* Luôn trên cùng */
-            padding-top: env(safe-area-inset-top);
         }
         /* Content tự co dãn */
         
@@ -64,7 +41,6 @@
             /* Cho phép cuộn nội dung */
             padding: 10px;
             background-color: #f9f9f9;
-            padding-top: env(safe-area-inset-top);
         }
         /* Ẩn thanh cuộn */
         
@@ -114,84 +90,210 @@
     </style>
 </head>
 
-<body id="body">
+<body>
     <!-- Header -->
     <header id="header">
         <h1>Chat Header</h1>
     </header>
 
     <!-- Content -->
-    <div class="debug"></div>
-
-
-    <footer>
-        <p> Footer asd </p>
-    </footer>
+    <div class="content" id="content" style="height: 439px;">
+        <p>Đây là nội dung có thể thay đổi hoặc kéo dài tùy ý.</p>
+        <p>Nội dung thứ 2...</p>
+        <p>Nội dung thứ 3...</p>
+        <p>Nội dung thứ 4...</p>
+        <p>Nội dung thứ 5...</p>
+        <p>Nội dung thứ 6...</p>
+        <p>Nội dung thứ 7...</p>
+        <p>Nội dung thứ 8...</p>
+        <p>Nội dung thứ 9...</p>
+        <p>Nội dung thứ 10...</p>
+        <p>Nội dung thứ 2...</p>
+        <p>Nội dung thứ 3...</p>
+        <p>Nội dung thứ 4...</p>
+        <p>Nội dung thứ 5...</p>
+        <p>Nội dung thứ 6...</p>
+        <p>Nội dung thứ 7...</p>
+        <p>Nội dung thứ 8...</p>
+        <p>Nội dung thứ 9...</p>
+        <p>Nội dung thứ 10...</p>
+        <p>Nội dung thứ 2...</p>
+        <p>Nội dung thứ 3...</p>
+        <p>Nội dung thứ 4...</p>
+        <p>Nội dung thứ 5...</p>
+        <p>Nội dung thứ 6...</p>
+        <p>Nội dung thứ 7...</p>
+        <p>Nội dung thứ 8...</p>
+        <p>Nội dung thứ 9...</p>
+        <p>Nội dung thứ 10...</p>
+        <p>Nội dung thứ 2...</p>
+        <p>Nội dung thứ 3...</p>
+        <p>Nội dung thứ 4...</p>
+        <p>Nội dung thứ 5...</p>
+        <p>Nội dung thứ 6...</p>
+        <p>Nội dung thứ 7...</p>
+        <p>Nội dung thứ 8...</p>
+        <p>Nội dung thứ 9...</p>
+        <p>Nội dung thứ 10...</p>
+        <p>Nội dung thứ 2...</p>
+        <p>Nội dung thứ 3...</p>
+        <p>Nội dung thứ 4...</p>
+        <p>Nội dung thứ 5...</p>
+        <p>Nội dung thứ 6...</p>
+        <p>Nội dung thứ 7...</p>
+        <p>Nội dung thứ 8...</p>
+        <p>Nội dung thứ 9...</p>
+        <p>Nội dung thứ 10...</p>
+        <p>Nội dung thứ 2...</p>
+        <p>Nội dung thứ 3...</p>
+        <p>Nội dung thứ 4...</p>
+        <p>Nội dung thứ 5...</p>
+        <p>Nội dung thứ 6...</p>
+        <p>Nội dung thứ 7...</p>
+        <p>Nội dung thứ 8...</p>
+        <p>Nội dung thứ 9...</p>
+        <p>Nội dung thứ 10...</p>
+        <p>Nội dung thứ 2...</p>
+        <p>Nội dung thứ 3...</p>
+        <p>Nội dung thứ 4...</p>
+        <p>Nội dung thứ 5...</p>
+        <p>Nội dung thứ 6...</p>
+        <p>Nội dung thứ 7...</p>
+        <p>Nội dung thứ 8...</p>
+        <p>Nội dung thứ 9...</p>
+        <p>Nội dung thứ 10...</p>
+        <p>Nội dung thứ 2...</p>
+        <p>Nội dung thứ 3...</p>
+        <p>Nội dung thứ 4...</p>
+        <p>Nội dung thứ 5...</p>
+        <p>Nội dung thứ 6...</p>
+        <p>Nội dung thứ 7...</p>
+        <p>Nội dung thứ 8...</p>
+        <p>Nội dung thứ 9...</p>
+        <p>Nội dung thứ 10...</p>
+        <p>Nội dung thứ 2...</p>
+        <p>Nội dung thứ 3...</p>
+        <p>Nội dung thứ 4...</p>
+        <p>Nội dung thứ 5...</p>
+        <p>Nội dung thứ 6...</p>
+        <p>Nội dung thứ 7...</p>
+        <p>Nội dung thứ 8...</p>
+        <p>Nội dung thứ 9...</p>
+        <p>Nội dung thứ 10...</p>
+    </div>
 
     <!-- Footer -->
     <footer id="footer">
-        <input type="text" placeholder="open keyboard" />
+        <input type="text" placeholder="Nhập tin nhắn của bạn..." id="inputText">
         <button>Gửi</button>
     </footer>
+
     <script>
-        var REPEAT = true,
-            INTERVAL = 100;
+        /*
+                                                    Devices missing from the dictionary 
+                                                    below will be calculated automatically 
+                                                    but the initial keyboard pop-up will 
+                                                    be a slow element movement 
+                                                    unless the dictionary data is added. If 
+                                                    the dictionary 'key' ('key': value) is the 
+                                                    same as what your device gives, then 
+                                                    the dictionary value should be too, 
+                                                    (don't add duplicate data).
 
-        var debugElement = document.querySelector(".debug");
-
-        (function loop() {
-            debugElement.innerHTML = debugHeight();
-            REPEAT && window.setTimeout(loop, INTERVAL);
-        })();
-
-        function getViewport() {
-            if (window.visualViewport && /Android/.test(navigator.userAgent)) {
-                // https://developers.google.com/web/updates/2017/09/visual-viewport-api    Note on desktop Chrome the viewport subtracts scrollbar widths so is not same as window.innerWidth/innerHeight
-                return {
-                    left: visualViewport.pageLeft,
-                    top: visualViewport.pageTop,
-                    width: visualViewport.width,
-                    height: visualViewport.height
-                };
-            }
-            var viewport = {
-                left: window.pageXOffset, // http://www.quirksmode.org/mobile/tableViewport.html
-                top: window.pageYOffset,
-                width: window.innerWidth || documentElement.clientWidth,
-                height: window.innerHeight || documentElement.clientHeight
-            };
-            if (/iPod|iPhone|iPad/.test(navigator.platform) && isInput(document.activeElement)) { // iOS *lies* about viewport size when keyboard is visible. See http://.com/questions/2593139/ipad-web-app-detect-virtual-keyboard-using-javascript-in-safari Input focus/blur can indicate, also scrollTop: 
-                return {
-                    left: viewport.left,
-                    top: viewport.top,
-                    width: viewport.width,
-                    height: viewport.height * (viewport.height > viewport.width ? 0.66 : 0.45) // Fudge factor to allow for keyboard on iPad
-                };
-            }
-            return viewport;
-        }
-
-
-        function isInput(el) {
-            var tagName = el && el.tagName && el.tagName.toLowerCase();
-            return (tagName == 'input' && el.type != 'button' && el.type != 'radio' && el.type != 'checkbox') || (tagName == 'textarea');
+                                                    Code used to get number data for the 
+                                                    key and value ('key': value):
+                                                    ----------------------------------
+                                                    'Key': document.documentElement
+                                                        .clientHeight;
+                                                    :
+                                                    Value: window.visualViewport;
+                                                */
+        let deviceHeightDic = {
+            '628': 359.65625, // iPhone 13 Mini
+            '548': 320.5 // iPhone 7
         };
+        let textAreaElem = document.getElementById('inputText');
+        let menuBtnElem = document.getElementById('menuBtn');
 
-        function debugHeight() {
-            var docEl = document.documentElement;
-            var rect = docEl.getBoundingClientRect();
-            return `${getViewport().height}` +
-                "<p> window.innerHeight: " + window.innerHeight + "</p>" +
-                "<p> window.outerHeight: " + window.outerHeight + "</p>" +
-                "<p> window.pageYOffset: " + window.pageYOffset + "</p>" +
-                "<p> documentElement.scrollHeight: " + docEl.scrollHeight + "</p>" +
-                "<p> documentElement.clientHeight: " + docEl.clientHeight + "</p>" +
-                "<p> documentElement.offsetHeight: " + docEl.offsetHeight + "</p>" +
-                "<p> clientBoundingRect: t:" + rect.top + " b:" + rect.bottom + " h:" + rect.height + "</p>";
+        /* Saves the original CSS so that it can 
+            revert the changes whenever the
+            keyboard is hidden */
+        let originalElemCss = menuBtnElem.style.cssText;
+
+        // The part of the webpage that's currently visible to the user
+        let visibleView = window.visualViewport;
+
+        /* Max height of the web page 
+           that could ever be visible to the user. 
+           Used to identify the iOS device in 
+           "deviceHeightDic" keys, as well as for 
+           the automatic working out of where 
+           the keyboard starts. */
+        let maxViewHeight = document.documentElement.clientHeight;
+
+        // Keyboard's start position used to work out where to place the elements
+        let keyboardStartPos = deviceHeightDic[maxViewHeight];
+
+        function moveElemAboveKeyboard() {
+
+            if (keyboardStartPos == null) {
+                // The function below will set keyboardStartPos and call this function
+                listenForViewReduction();
+                return;
+            }
+
+            // Needed to undo the CSS value
+            menuBtnElem.style.bottom = 'auto';
+            menuBtnElem.style.top = (keyboardStartPos - menuBtnElem.offsetHeight) + 'px';
         }
+
+        function listenForViewReduction() {
+            /* Listen to all resizing but only acts on 
+               a view height of lesser amount than l
+               the max. This function will only be 
+               called once (if needed), but when 
+               called the event listener below will 
+               run twice...first returning the max 
+               view height, and second will be the 
+               active keyboard reduced view height */
+
+            visibleView.addEventListener('resize', function func() {
+
+                let visibleViewHeight = visibleView.height;
+
+                if (visibleViewHeight != maxViewHeight) {
+
+                    keyboardStartPos = visibleViewHeight;
+
+                    /* Calls the function back as the 
+                       original function call has ended 
+                       due to this event listener 
+                       needing to trigger twice before
+                       getting correct height value */
+                    moveElemAboveKeyboard();
+
+                    // After getting the correct height value, the listener is no longer needed, so it's removed
+                    visibleView.removeEventListener('resize', func);
+                }
+            });
+        }
+
+        textAreaElem.addEventListener('focus', moveElemAboveKeyboard);
+        textAreaElem.addEventListener('blur', function() {
+            menuBtnElem.style.cssText = originalElemCss;
+        });
     </script>
 
-
+    <div id="veepn-breach-alert"></div>
+    <style>
+        @font-face {
+            font-family: FigtreeVF;
+            src: url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"), url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");
+            font-weight: 100 1000;
+            font-display: swap
+        }
+    </style>
 </body>
+<love-deal-csui></love-deal-csui>
 
 </html>
