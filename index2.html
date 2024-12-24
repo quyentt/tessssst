@@ -8,6 +8,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover, user-scalable=no, interactive-widget=resizes-content">
     <title>Chat Layout</title>
     <style>
+        p {
+            margin: 0;
+        }
+        
+        body {
+            display: block;
+            margin: 0;
+        }
+        
+        footer {
+            position: fixed;
+            height: 60px;
+            background: blue;
+            bottom: 0;
+            width: 100%;
+            z-index: 500;
+        }
+        
         body,
         html {
             margin: 0;
@@ -103,90 +121,12 @@
     </header>
 
     <!-- Content -->
-    <div class="content" id="content" style="height: 100%">
-        <p>Đây là nội dung có thể thay đổi hoặc kéo dài tùy ý.</p>
-        <p>Nội dung thứ 2...</p>
-        <p>Nội dung thứ 3...</p>
-        <p>Nội dung thứ 4...</p>
-        <p>Nội dung thứ 5...</p>
-        <p>Nội dung thứ 6...</p>
-        <p>Nội dung thứ 7...</p>
-        <p>Nội dung thứ 8...</p>
-        <p>Nội dung thứ 9...</p>
-        <p>Nội dung thứ 10...</p>
-        <p>Nội dung thứ 2...</p>
-        <p>Nội dung thứ 3...</p>
-        <p>Nội dung thứ 4...</p>
-        <p>Nội dung thứ 5...</p>
-        <p>Nội dung thứ 6...</p>
-        <p>Nội dung thứ 7...</p>
-        <p>Nội dung thứ 8...</p>
-        <p>Nội dung thứ 9...</p>
-        <p>Nội dung thứ 10...</p>
-        <p>Nội dung thứ 2...</p>
-        <p>Nội dung thứ 3...</p>
-        <p>Nội dung thứ 4...</p>
-        <p>Nội dung thứ 5...</p>
-        <p>Nội dung thứ 6...</p>
-        <p>Nội dung thứ 7...</p>
-        <p>Nội dung thứ 8...</p>
-        <p>Nội dung thứ 9...</p>
-        <p>Nội dung thứ 10...</p>
-        <p>Nội dung thứ 2...</p>
-        <p>Nội dung thứ 3...</p>
-        <p>Nội dung thứ 4...</p>
-        <p>Nội dung thứ 5...</p>
-        <p>Nội dung thứ 6...</p>
-        <p>Nội dung thứ 7...</p>
-        <p>Nội dung thứ 8...</p>
-        <p>Nội dung thứ 9...</p>
-        <p>Nội dung thứ 10...</p>
-        <p>Nội dung thứ 2...</p>
-        <p>Nội dung thứ 3...</p>
-        <p>Nội dung thứ 4...</p>
-        <p>Nội dung thứ 5...</p>
-        <p>Nội dung thứ 6...</p>
-        <p>Nội dung thứ 7...</p>
-        <p>Nội dung thứ 8...</p>
-        <p>Nội dung thứ 9...</p>
-        <p>Nội dung thứ 10...</p>
-        <p>Nội dung thứ 2...</p>
-        <p>Nội dung thứ 3...</p>
-        <p>Nội dung thứ 4...</p>
-        <p>Nội dung thứ 5...</p>
-        <p>Nội dung thứ 6...</p>
-        <p>Nội dung thứ 7...</p>
-        <p>Nội dung thứ 8...</p>
-        <p>Nội dung thứ 9...</p>
-        <p>Nội dung thứ 10...</p>
-        <p>Nội dung thứ 2...</p>
-        <p>Nội dung thứ 3...</p>
-        <p>Nội dung thứ 4...</p>
-        <p>Nội dung thứ 5...</p>
-        <p>Nội dung thứ 6...</p>
-        <p>Nội dung thứ 7...</p>
-        <p>Nội dung thứ 8...</p>
-        <p>Nội dung thứ 9...</p>
-        <p>Nội dung thứ 10...</p>
-        <p>Nội dung thứ 2...</p>
-        <p>Nội dung thứ 3...</p>
-        <p>Nội dung thứ 4...</p>
-        <p>Nội dung thứ 5...</p>
-        <p>Nội dung thứ 6...</p>
-        <p>Nội dung thứ 7...</p>
-        <p>Nội dung thứ 8...</p>
-        <p>Nội dung thứ 9...</p>
-        <p>Nội dung thứ 10...</p>
-        <p>Nội dung thứ 2...</p>
-        <p>Nội dung thứ 3...</p>
-        <p>Nội dung thứ 4...</p>
-        <p>Nội dung thứ 5...</p>
-        <p>Nội dung thứ 6...</p>
-        <p>Nội dung thứ 7...</p>
-        <p>Nội dung thứ 8...</p>
-        <p>Nội dung thứ 9...</p>
-        <p>Nội dung thứ 10...</p>
-    </div>
+    <div class="debug"></div>
+    <input type="text" placeholder="open keyboard" />
+
+    <footer>
+        <p> Footer asd </p>
+    </footer>
 
     <!-- Footer -->
     <footer id="footer">
@@ -194,29 +134,61 @@
         <button>Gửi</button>
     </footer>
     <script>
-        const bottomBar = document.getElementById("footer");
-        const viewport = window.visualViewport;
+        var REPEAT = true,
+            INTERVAL = 100;
 
-        function viewportHandler() {
-            const layoutViewport = document.getElementById("body");
+        var debugElement = document.querySelector(".debug");
 
-            // Since the bar is position: fixed we need to offset it by the visual
-            // viewport's offset from the layout viewport origin.
-            const offsetLeft = viewport.offsetLeft;
-            const offsetTop =
-                viewport.height -
-                layoutViewport.getBoundingClientRect().height +
-                viewport.offsetTop;
+        (function loop() {
+            debugElement.innerHTML = debugHeight();
+            REPEAT && window.setTimeout(loop, INTERVAL);
+        })();
 
-            // You could also do this by setting style.left and style.top if you
-            // use width: 100% instead.
-
-            layoutViewport.style.height = viewport.height.toString() + 'px';
-            document.getElementsByTagName('html')[0].style.height = viewport.height.toString() + 'px';
-
+        function getViewport() {
+            if (window.visualViewport && /Android/.test(navigator.userAgent)) {
+                // https://developers.google.com/web/updates/2017/09/visual-viewport-api    Note on desktop Chrome the viewport subtracts scrollbar widths so is not same as window.innerWidth/innerHeight
+                return {
+                    left: visualViewport.pageLeft,
+                    top: visualViewport.pageTop,
+                    width: visualViewport.width,
+                    height: visualViewport.height
+                };
+            }
+            var viewport = {
+                left: window.pageXOffset, // http://www.quirksmode.org/mobile/tableViewport.html
+                top: window.pageYOffset,
+                width: window.innerWidth || documentElement.clientWidth,
+                height: window.innerHeight || documentElement.clientHeight
+            };
+            if (/iPod|iPhone|iPad/.test(navigator.platform) && isInput(document.activeElement)) { // iOS *lies* about viewport size when keyboard is visible. See http://.com/questions/2593139/ipad-web-app-detect-virtual-keyboard-using-javascript-in-safari Input focus/blur can indicate, also scrollTop: 
+                return {
+                    left: viewport.left,
+                    top: viewport.top,
+                    width: viewport.width,
+                    height: viewport.height * (viewport.height > viewport.width ? 0.66 : 0.45) // Fudge factor to allow for keyboard on iPad
+                };
+            }
+            return viewport;
         }
 
-        window.visualViewport.addEventListener("resize", viewportHandler);
+
+        function isInput(el) {
+            var tagName = el && el.tagName && el.tagName.toLowerCase();
+            return (tagName == 'input' && el.type != 'button' && el.type != 'radio' && el.type != 'checkbox') || (tagName == 'textarea');
+        };
+
+        function debugHeight() {
+            var docEl = document.documentElement;
+            var rect = docEl.getBoundingClientRect();
+            return `${getViewport().height}` +
+                "<p> window.innerHeight: " + window.innerHeight + "</p>" +
+                "<p> window.outerHeight: " + window.outerHeight + "</p>" +
+                "<p> window.pageYOffset: " + window.pageYOffset + "</p>" +
+                "<p> documentElement.scrollHeight: " + docEl.scrollHeight + "</p>" +
+                "<p> documentElement.clientHeight: " + docEl.clientHeight + "</p>" +
+                "<p> documentElement.offsetHeight: " + docEl.offsetHeight + "</p>" +
+                "<p> clientBoundingRect: t:" + rect.top + " b:" + rect.bottom + " h:" + rect.height + "</p>";
+        }
     </script>
 
 
