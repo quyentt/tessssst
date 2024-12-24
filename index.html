@@ -8,16 +8,17 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
+            height: 100dvh;
             display: flex;
             flex-direction: column;
             font-family: Arial, sans-serif;
             overflow: hidden; /* Ngăn trang bị cuộn ngoài ý muốn */
+            padding-top: env(safe-area-inset-top);
         }
 
         /* Header cố định trên đầu */
         header {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
@@ -27,6 +28,7 @@
             text-align: center;
             font-size: 18px;
             z-index: 1000; /* Luôn trên cùng */
+            padding-top: env(safe-area-inset-top);
         }
 
         /* Content tự co dãn */
