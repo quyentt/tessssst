@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- saved from url=(0034)https://8.222.254.171/home/Privacy -->
-<html lang="en" love-deals="879BC0364EB9EBEE3DBE71B15E175613" style="overflow: hidden;;">
+<html lang="en" love-deals="879BC0364EB9EBEE3DBE71B15E175613" style="overflow: hidden;">
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -196,9 +196,13 @@
     <script>
         if (window.visualViewport) {
 
+            alert(window.visualViewport.height);
+
             function resizeHandler() {
                 for (const sessionView of document.getElementsByClassName('body')) {
-                    sessionView.style.height = 0 + 'px';
+                    sessionView.style.height = window.visualViewport.height.toString() + 'px';
+                    document.getElementsByTagName('html')[0].style.height = window.visualViewport.height.toString() + 'px';
+
 
                 }
             }
