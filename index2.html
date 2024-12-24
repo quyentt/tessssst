@@ -34,7 +34,6 @@
         /* Content tự co dãn */
         
         .content {
-            flex: 1;
             margin-top: 60px;
             /* Đẩy nội dung xuống dưới header */
             overflow-y: scroll;
@@ -97,7 +96,7 @@
     </header>
 
     <!-- Content -->
-    <div class="content" id="content" style="height: 20px">
+    <div class="content" id="content" style="height: 200px">
         <p>Đây là nội dung có thể thay đổi hoặc kéo dài tùy ý.</p>
         <p>Nội dung thứ 2...</p>
         <p>Nội dung thứ 3...</p>
@@ -188,101 +187,7 @@
         <button>Gửi</button>
     </footer>
 
-    <script>
-        /*
-                                                                                                                                                                    Devices missing from the dictionary 
-                                                                                                                                                                    below will be calculated automatically 
-                                                                                                                                                                    but the initial keyboard pop-up will 
-                                                                                                                                                                    be a slow element movement 
-                                                                                                                                                                    unless the dictionary data is added. If 
-                                                                                                                                                                    the dictionary 'key' ('key': value) is the 
-                                                                                                                                                                    same as what your device gives, then 
-                                                                                                                                                                    the dictionary value should be too, 
-                                                                                                                                                                    (don't add duplicate data).
 
-                                                                                                                                                                    Code used to get number data for the 
-                                                                                                                                                                    key and value ('key': value):
-                                                                                                                                                                    ----------------------------------
-                                                                                                                                                                    'Key': document.documentElement
-                                                                                                                                                                        .clientHeight;
-                                                                                                                                                                    :
-                                                                                                                                                                    Value: window.visualViewport;
-                                                                                                                                                                */
-        let deviceHeightDic = {
-            '628': 359.65625, // iPhone 13 Mini
-            '548': 320.5 // iPhone 7
-        };
-        let textAreaElem = document.getElementById('inputText');
-        let menuBtnElem = document.getElementById('menuBtn');
-
-        /* Saves the original CSS so that it can 
-            revert the changes whenever the
-            keyboard is hidden */
-        let originalElemCss = menuBtnElem.style.cssText;
-
-        // The part of the webpage that's currently visible to the user
-        let visibleView = window.visualViewport;
-
-        /* Max height of the web page 
-           that could ever be visible to the user. 
-           Used to identify the iOS device in 
-           "deviceHeightDic" keys, as well as for 
-           the automatic working out of where 
-           the keyboard starts. */
-        let maxViewHeight = document.documentElement.clientHeight;
-
-        // Keyboard's start position used to work out where to place the elements
-        let keyboardStartPos = deviceHeightDic[maxViewHeight];
-
-        function moveElemAboveKeyboard() {
-
-            if (keyboardStartPos == null) {
-                // The function below will set keyboardStartPos and call this function
-                listenForViewReduction();
-                return;
-            }
-
-            // Needed to undo the CSS value
-            menuBtnElem.style.bottom = 'auto';
-            menuBtnElem.style.top = (keyboardStartPos - menuBtnElem.offsetHeight) + 'px';
-        }
-
-        function listenForViewReduction() {
-            /* Listen to all resizing but only acts on 
-               a view height of lesser amount than l
-               the max. This function will only be 
-               called once (if needed), but when 
-               called the event listener below will 
-               run twice...first returning the max 
-               view height, and second will be the 
-               active keyboard reduced view height */
-
-            visibleView.addEventListener('resize', function func() {
-
-                let visibleViewHeight = visibleView.height;
-
-                if (visibleViewHeight != maxViewHeight) {
-
-                    keyboardStartPos = visibleViewHeight;
-
-                    /* Calls the function back as the 
-                       original function call has ended 
-                       due to this event listener 
-                       needing to trigger twice before
-                       getting correct height value */
-                    moveElemAboveKeyboard();
-
-                    // After getting the correct height value, the listener is no longer needed, so it's removed
-                    visibleView.removeEventListener('resize', func);
-                }
-            });
-        }
-
-        textAreaElem.addEventListener('focus', moveElemAboveKeyboard);
-        textAreaElem.addEventListener('blur', function() {
-            menuBtnElem.style.cssText = originalElemCss;
-        });
-    </script>
 
     <div id="veepn-breach-alert"></div>
     <style>
