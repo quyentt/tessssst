@@ -184,11 +184,12 @@
     </footer>
     <script>
         if (window.visualViewport) {
-            alert('ok')
+           
             function resizeHandler() {
                 for (const sessionView of document.getElementsByClassName('content')) {
                     sessionView.style.height = window.visualViewport.height.toString() + 'px';
                     document.getElementsByTagName('html')[0].style.height = window.visualViewport.height.toString() + 'px';
+                    alert(sessionView.style.height)
                 }
             }
         
