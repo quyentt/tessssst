@@ -199,9 +199,11 @@
             function resizeHandler() {
                 for (const sessionView of document.getElementsByClassName('body')) {
                     sessionView.style.height = window.visualViewport.height.toString() + 'px';
-                    document.getElementsByTagName('html')[0].style.height = 50 + 'px'
+                    window.visualViewport.height = 200 + "px"
+
 
                 }
+
             }
 
             window.visualViewport.addEventListener('resize', resizeHandler);
