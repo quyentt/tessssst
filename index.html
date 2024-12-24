@@ -182,6 +182,19 @@
         <input type="text" placeholder="Nhập tin nhắn của bạn..." id="inputText">
         <button>Gửi</button>
     </footer>
+    <script>
+        if (window.visualViewport) {
+            alert('ok')
+            function resizeHandler() {
+                for (const sessionView of document.getElementsByClassName('content')) {
+                    sessionView.style.height = window.visualViewport.height.toString() + 'px';
+                    document.getElementsByTagName('html')[0].style.height = window.visualViewport.height.toString() + 'px';
+                }
+            }
+        
+            window.visualViewport.addEventListener('resize', resizeHandler);
+        }
+    </script>
 
     <script>
         // Đảm bảo header và footer cố định khi bàn phím nổi lên
