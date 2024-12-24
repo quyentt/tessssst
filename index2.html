@@ -190,18 +190,72 @@
         <button>Gửi</button>
     </footer>
 
+    <script>
+        /*
+                                                                                                                                                            Variable declarations
+                                                                                                                                                        */
+        let keyboardStartPos = 0;
+        let menuBtnElem = document.getElementById('footer');
+        let originalElemCss = menuBtnElem.style.cssText;
+        let visibleView = window.visualViewport;
+        let maxViewHeight = document.documentElement.clientHeight;
+        let textAreaElem = document.getElementById('inputText');
 
+        /*
+            Functions
+        */
+        /*
+            Function below calls "listenForViewReduction()" only once and ends. After
+            that "listenForViewReduction()" calls this function back after the view's 
+            height when the keyboard's open has been successfully saved to a variable.
+        */
+        function moveElemAboveKeyboard() {
 
-    <div id="veepn-breach-alert"></div>
-    <style>
-        @font-face {
-            font-family: FigtreeVF;
-            src: url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2 supports variations"), url(chrome-extension://majdfhpaihoncoakbjgbdhglocklcgno/fonts/FigtreeVF.woff2) format("woff2-variations");
-            font-weight: 100 1000;
-            font-display: swap
+            if (keyboardStartPos == 0) {
+                listenForViewReduction();
+                return;
+            }
+
+            menuBtnElem.style.bottom = 'auto';
+            menuBtnElem.style.top = (keyboardStartPos - menuBtnElem.offsetHeight) + 'px';
+
         }
-    </style>
+
+        /*
+            Function below is used only once to get size of visible view when the 
+            keyboard's open. When this is first called, the visible view will not 
+            be correct (it will still be the full view), but straight after the 
+            event listener triggers a second time and reads the correct view. After 
+            which it saves the value, calls back "moveElemAboveKeyboard()" and 
+            removes the event listener (itself).
+        */
+        function listenForViewReduction() {
+
+            visibleView.addEventListener('resize', function func() {
+
+                let visibleViewHeight = visibleView.height;
+
+                if (visibleViewHeight != maxViewHeight) {
+
+                    keyboardStartPos = visibleViewHeight;
+
+                    moveElemAboveKeyboard();
+
+                    visibleView.removeEventListener('resize', func);
+                }
+            });
+        }
+
+        /*
+            Rest of code
+        */
+        textAreaElem.addEventListener('focus', moveElemAboveKeyboard);
+        textAreaElem.addEventListener('blur', function() {
+            menuBtnElem.style.cssText = originalElemCss;
+        });
+    </script>
+
 </body>
-<love-deal-csui></love-deal-csui>
+
 
 </html>
