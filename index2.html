@@ -194,20 +194,20 @@
         <button>Gửi</button>
     </footer>
     <script>
-        if (window.visualViewport) {
-
-            function resizeHandler() {
-                for (const sessionView of document.getElementsByClassName('body')) {
-                    sessionView.style.height = window.visualViewport.height.toString() + 'px';
-                    window.visualViewport.height = 200 + "px"
-
-
-                }
-
+    </script>
+    <script>
+        window.addEventListener('resize', function() {
+            // Kiểm tra xem bàn phím có đang hiển thị không
+            if (window.innerHeight < window.outerHeight) {
+                alert("ok")
+                    // Nếu bàn phím đang hiển thị, thực hiện các thay đổi giao diện
+                document.body.style.paddingBottom = '100px'; // Ví dụ: Tăng padding bottom để tránh nội dung bị che khuất
+            } else {
+                alert('nit ok')
+                    // Nếu bàn phím không hiển thị, khôi phục lại giao diện ban đầu
+                document.body.style.paddingBottom = '0';
             }
-
-            window.visualViewport.addEventListener('resize', resizeHandler);
-        }
+        });
     </script>
 
     <script>
